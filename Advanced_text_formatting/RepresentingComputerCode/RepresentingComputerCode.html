@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>
+			Makefile
+		</title>
+	</head>
+	<body>
+		<pre><code>
+			CC = gcc
+			TARGET = HelloWorld.out
+			OBJS = HelloWorld.o
+			SRCS = HelloWorld.c
 
+			$(TARGET) : $(OBJS)
+				$(CC) -o $@ $(OBJS)
+
+			$(OBJS) : $(SRCS)
+				$(CC) -c -o $(OBJS) $(SRCS)
+		</code></pre>
+		<p>"<var>CC</var>" means the used compiler.</p>
+		<p>"<var>TARGET</var>" means the executable file.</p>
+		<p>"<var>OBJS</var>" means the objective file.</p>
+		<p>"<var>SRCS</var>" means the source file.</p>
+		<p>If you want to copy all above source code above Makefile,</p>
+		<p>push buttons in your keyboard <kbd>Ctrl</kbd> <kbd>C</kbd>.</p>
+		<p>And to want to paste it, do push <kbd>Ctrl</kbd> <kbd>V</kbd>.</p>
+		<p>Anyway when you execute the Makefile, following sentences will appear in your monitor.</p>
+		<pre><samp>
+			gcc -c HelloWorld.o HelloWorld.c
+			gcc -o HelloWorld.out HelloWorld.o
+		</samp></pre>
+	</body>
+</html>
